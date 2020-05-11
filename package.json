@@ -1,0 +1,19 @@
+{
+  "name": "criador-de-videos-youtube",
+  "version": "1.0.0",
+  "description": "Robo criador de videos para o youtube",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denisfelic/criador-de-videos-youtube.git"
+  },
+  "author": "Denis Feliciano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/denisfelic/criador-de-videos-youtube/issues"
+  },
+  "homepage": "https://github.com/denisfelic/criador-de-videos-youtube#readme"
+}
