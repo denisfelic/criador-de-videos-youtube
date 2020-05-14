@@ -6,6 +6,8 @@
 # Format: 
 File: `algorithmia.json`
 ```
-
+{
+    "apiKey" : "SEU CODIGO DA API AQUI"
+}
 
 ```
