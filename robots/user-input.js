@@ -1,7 +1,6 @@
 const readline = require('readline-sync');
 
 function userInput(content) {
-
   function askedAndReturnedSearchTerm() {
     return readline.question('Type the term to search in Wikipedia: ');
   }
@@ -15,9 +14,9 @@ function userInput(content) {
   }
 
   content.searchTerm = {
-    "articleName": askedAndReturnedSearchTerm(),
-    "lang": "en"
-  }
+    articleName: askedAndReturnedSearchTerm(),
+    lang: 'en',
+  };
 
   content.prefix = askedAndReturnedPrefix();
 }

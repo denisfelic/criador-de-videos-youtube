@@ -1,9 +1,8 @@
-const algorithmia = require("algorithmia");
-const algorithmiaApiKey = require('../creadentials/algorithmia.json').apiKey;
+const algorithmia = require('algorithmia');
 const sentenceBounderyDetection = require('sbd');
+const algorithmiaApiKey = require('../creadentials/algorithmia.json').apiKey;
 
 async function robot(content) {
-
   async function downloadContentFromWikipedia() {
     const algorithmiaAuthenticaded = algorithmia(algorithmiaApiKey);
     const wikipediaAlgorithm = algorithmiaAuthenticaded.algo('web/WikipediaParser/0.1.2?timeout=300');
@@ -13,12 +12,8 @@ async function robot(content) {
   }
 
   function sanitizeContent(content) {
-    // Quebrar todo conteúdo em linhas e remover linhas em branco
-    const contentWithoutBlankLines = removeBlankLines(content.sourceContentOriginal);
-    const contentWithoutMarkDown = removeMarkdowns(contentWithoutBlankLines);
-    const contentWithoutDateInParentheses = removeDateInParentheses(contentWithoutMarkDown);
-
-    content.sanitizeContent = contentWithoutDateInParentheses;
+    // Quebrar todo conteúdo em linhas,remover linhas em branco e a data padrão que vem do Wikipedia
+    // Por fim adiciona-lo a propriedade do objeto
 
     function removeBlankLines(text) {
       const allContentInLines = text.split('\n');
@@ -29,7 +24,7 @@ async function robot(content) {
         }
         // Mantem
         return true;
-      })
+      });
 
       return withoutBlankLines;
     }
@@ -47,6 +42,11 @@ async function robot(content) {
     function removeDateInParentheses(text) {
       return text.replace(/\((?:\([^()]*\)|[^()])*\)/gm, '').replace(/  /g, ' ');
     }
+    const contentWithoutBlankLines = removeBlankLines(content.sourceContentOriginal);
+    const contentWithoutMarkDown = removeMarkdowns(contentWithoutBlankLines);
+    const contentWithoutDateInParentheses = removeDateInParentheses(contentWithoutMarkDown);
+
+    content.sanitizeContent = contentWithoutDateInParentheses;
   }
 
   function breakContentIntoSentences(content) {
@@ -57,11 +57,9 @@ async function robot(content) {
       content.sentence.push({
         text: element,
         keywords: [],
-        image: []
+        image: [],
       });
     });
-
-    console.log(content.sentence);
   }
 
 
