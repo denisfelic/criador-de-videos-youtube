@@ -1,14 +1,20 @@
+const userInput = require('./robots/user-input.js');
+const textRobot = require('./robots/text-robot.js');
+
 const robots = {
-  userInput: require('./robots/user-input.js'),
-  textRobot: require('./robots/text-robot.js'),
+  userInput,
+  textRobot,
 };
 
 async function start() {
-  const content = {};
+  const content = {
+    maximumSentences: 7,
+  };
 
   robots.userInput(content);
   await robots.textRobot(content);
-  console.log(content)
+
+  console.log(JSON.stringify(content, null, 4));
 }
 
 start();
