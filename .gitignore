@@ -103,8 +103,18 @@ dist
 # TernJS port file
 .tern-port
 
-# Credentials
-creadentials/*.json
+# Credentials Algorithmia
+creadentials/algorithmia.json
+algorithmia.json
+creadentials\algorithmia.json
+\creadentials\algorithmia.json
+/creadentials/algorithmia.json
 
+# Credentials
+creadentials/watson-nlu.json
+watson-nlu.json
+creadentials\watson-nlu.json
+\creadentials\watson-nlu.json
+/creadentials/watson-nlu.json
 # Content param Json
 content-params.json
