@@ -6,6 +6,7 @@ const algorithmia = require('algorithmia');
 const sentenceBounderyDetection = require('sbd');
 const algorithmiaApiKey = require('../creadentials/algorithmia.json').apiKey;
 const apikey = require('../creadentials/watson-nlu.json').apikey;
+const stateFile = require('./state-save-robot');
 
 const nlu = new NaturalLanguageUnderstandingV1({
   version: '2019-07-12',
@@ -15,12 +16,14 @@ const nlu = new NaturalLanguageUnderstandingV1({
   url: 'https://gateway.watsonplatform.net/natural-language-understanding/api/',
 });
 
-async function robot(content) {
+async function robot() {
+  const content = await stateFile.load();
   await downloadContentFromWikipedia();
   sanitizeContent();
   breakContentIntoSentences();
   setLimitOfSentences();
   await fetchKeywordsOfAllSentences();
+  stateFile.save(content);
 
   async function downloadContentFromWikipedia() {
     const algorithmiaAuthenticaded = algorithmia(algorithmiaApiKey);

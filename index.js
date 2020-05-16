@@ -7,14 +7,12 @@ const robots = {
 };
 
 async function start() {
-  const content = {
-    maximumSentences: 7,
-  };
+  const content = {};
 
   robots.userInput(content);
-  await robots.textRobot(content);
-
-  console.log(JSON.stringify(content, null, 4));
+  await robots.textRobot();
+  // const loaded = robots.stateSaveRobot.load();
+  // console.log(JSON.stringify(content, null, 4));
 }
 
 start();
