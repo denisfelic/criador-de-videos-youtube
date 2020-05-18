@@ -26,4 +26,18 @@ File: `watson-nlu.json`
   "iam_serviceid_crn": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX1",
   "url": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 }
+
+
+### Google Apis 
+## https://developers.google.com/custom-search/v1/overview -> Custom search Api
+## https://cse.google.com/cse/create/new -> Google Custom Search ID
+# Format 
+File: `watson-nlu.json`
+```
+{
+  "apiKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+   "searchEngineId" : "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx"
+}
+
+
 ```
