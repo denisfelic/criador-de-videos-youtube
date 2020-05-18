@@ -79,7 +79,6 @@ async function robot() {
       content.sentences.push({
         text: element,
         keywords: [],
-        image: [],
       });
     });
   }
