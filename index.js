@@ -10,11 +10,9 @@ const robots = {
 };
 
 async function start() {
-  content = await stateFile.load();
-  if(content){
-  let content = {};
+  content = {};
   stateFile.save(content);
-  }
+
 
   
   
