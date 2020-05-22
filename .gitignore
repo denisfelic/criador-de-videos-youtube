@@ -103,9 +103,8 @@ dist
 # TernJS port file
 .tern-port
 
-
-# Content param Json
-content-params.json
-
 #Credentials Folder
 creadentials/*json
+
+#Ignore temp images
+temp/imgs/*png

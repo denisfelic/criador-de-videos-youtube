@@ -10,18 +10,18 @@ const robots = {
 };
 
 async function start() {
-  content = {};
-  stateFile.save(content);
+  //content = {};
+  //stateFile.save(content);
 
 
   
   
-  robots.userInput(content);
+  robots.userInput();
   await robots.textRobot();
   await robots.imageRobot();
   content = await stateFile.load();
   console.dir(content, { depth: null });
-   // console.log(JSON.stringify(content, null, 4));
+  console.log(JSON.stringify(content, null, 4));
 }
 
 start();
