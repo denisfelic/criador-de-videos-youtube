@@ -6,9 +6,9 @@ const imageDownloader = require('image-downloader');
 
 async function robot() {
     const content = await stateFile.load();
-    //await  fetchImagesWithKeyWords(content);
+    await  fetchImagesWithKeyWords(content);
     await addImagesToContent(content);
-    //stateFile.save(content);
+    stateFile.save(content);
 
     async function fetchImagesWithKeyWords(content) {
 

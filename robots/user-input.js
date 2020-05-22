@@ -1,7 +1,8 @@
 const readline = require('readline-sync');
 const stateSaveRobot = require('./state-save-robot.js');
 
-function userInput(content) {
+function userInput() {
+  const content = stateSaveRobot.load();
   content.maximumSentences = 7;
   content.searchTerm = {
     articleName: askedAndReturnedSearchTerm(),
