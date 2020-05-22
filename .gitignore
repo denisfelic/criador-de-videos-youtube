@@ -109,3 +109,6 @@ content-params.json
 
 #Credentials Folder
 creadentials/*json
+
+#Ignore temp images
+temp/imgs/*png
